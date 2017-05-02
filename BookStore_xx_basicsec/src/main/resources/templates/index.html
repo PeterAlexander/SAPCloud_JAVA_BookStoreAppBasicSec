@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>BookStore App</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">SAP Education- SAP Cloud Excercise </a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="rest/books">REST</a></li>
+					<li><a href="swagger-ui.html">API Documentation</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<h2>The BookStoreApp</h2>
+
+
+		<div th:unless="${#lists.isEmpty(books)}">
+			<dl th:each="book : ${books}">
+				<dt class="bookHeadline">
+					<a
+						th:href="'http://www.amazon.com/gp/product/' 
+                      + ${book.isbn} + '/tag=' + ${amazonID}"
+						th:text="${book.title}">Title</a> by <span
+						th:text="${book.author}">Author</span> (ISBN: <span
+						th:text="${book.isbn}">ISBN</span>)
+						<!-- Excercise -->
+						<!--  th:text="${book.category}">Category</span>)-->
+				</dt>
+				<dd class="bookDescription">
+					<span th:if="${book.description}" th:text="${book.description}">Description</span>
+					<span th:if="${book.description eq null}"> No description
+						available</span>
+				</dd>
+			</dl>
+		</div>
+		<div th:if="${#lists.isEmpty(books)}">
+			<p>You have no books in your book list</p>
+		</div>
+
+
+		<hr />
+		<div>
+			<h3>Add a book</h3>
+
+			<form method="POST" th:action="@{/}">
+				<table>
+					<tr>
+						<td><label for="title">Title:</label></td>
+						<td><input type="text" name="title" size="50"></input></td>
+					</tr>
+					<tr>
+						<td><label for="author">Author:</label></td>
+						<td><input type="text" name="author" size="50"></input></td>
+					</tr>
+					<tr>
+						<td><label for="isbn">ISBN:</label></td>
+						<td><input type="text" name="isbn" size="50"></input></td>
+					</tr>
+					<!-- Excercise -->
+<!-- 					<tr> -->
+<!-- 						<td><label for="Category">Category</label></td> -->
+<!-- 						<td><input type="text" name="category" size="50"></input></td> -->
+<!-- 					</tr> -->
+					
+					<tr>
+						<td><label for="description">Description:</label></td>
+						<td><textarea name="description" cols="80" rows="5"></textarea></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit"></input></td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
