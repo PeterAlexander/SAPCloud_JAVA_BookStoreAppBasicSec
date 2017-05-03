@@ -42,11 +42,7 @@ public class BookStoreApplication extends SpringBootServletInitializer {
 					repository.save(new Book("Reader2", "123457", "Title2", "Author2", "Description2"));
 					repository.save(new Book("Reader3", "123458", "Title3", "Author3", "Description3"));
 					
-					//Excercise
-//					repository.save(new Book("Reader1", "123456", "Title1", "Author1", "Description1","Category 1"));
-//					repository.save(new Book("Reader2", "123457", "Title2", "Author2", "Description2","Category 2"));
-//					repository.save(new Book("Reader3", "123458", "Title3", "Author3", "Description3","Category 3"));
-
+					
 				}
 			}
 		};
