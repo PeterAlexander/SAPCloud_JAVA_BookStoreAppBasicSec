@@ -29,15 +29,6 @@ public class Book {
 		
 	}
 
-//	//Excercise 
-//	public Book(String reader, String isbn, String title, String author, String description, String category) {
-//		this.isbn = isbn;
-//		this.title = title;
-//		this.author = author;
-//		this.description = description;
-//		this.category = category;
-//		
-//	}
 	
 	
 	@Id
@@ -47,7 +38,7 @@ public class Book {
 	private String title;
 	private String author;
 	private String description;
-	// - Excercise : private String category;
+	
 
 	public Long getId() {
 		return id;
@@ -89,16 +80,6 @@ public class Book {
 		this.description = description;
 	}
 
-	/**
-	 * Excercise
-	 */
-
-	// public String getCategory() {
-	// return category;
-	// }
-	//
-	// public void setCategory(String category) {
-	// this.category = category;
-	// }
+	
 
 }
