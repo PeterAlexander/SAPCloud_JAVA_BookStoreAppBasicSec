@@ -38,8 +38,7 @@
 						th:text="${book.title}">Title</a> by <span
 						th:text="${book.author}">Author</span> (ISBN: <span
 						th:text="${book.isbn}">ISBN</span>)
-						<!-- Excercise -->
-						<!--  th:text="${book.category}">Category</span>)-->
+						
 				</dt>
 				<dd class="bookDescription">
 					<span th:if="${book.description}" th:text="${book.description}">Description</span>
@@ -71,11 +70,7 @@
 						<td><label for="isbn">ISBN:</label></td>
 						<td><input type="text" name="isbn" size="50"></input></td>
 					</tr>
-					<!-- Excercise -->
-<!-- 					<tr> -->
-<!-- 						<td><label for="Category">Category</label></td> -->
-<!-- 						<td><input type="text" name="category" size="50"></input></td> -->
-<!-- 					</tr> -->
+					
 					
 					<tr>
 						<td><label for="description">Description:</label></td>
